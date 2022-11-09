@@ -1,22 +1,41 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const ReviewCard = ({ reviews }) => {
-    const { email, reviewMsg } = reviews;
-    console.log(email, reviewMsg)
+    const {_id} = useLoaderData()
+    console.log(_id)
+    const {id, email, reviewMsg } = reviews;
+    console.log(id, email, reviewMsg)
+    
+    
+
     const handleEditReview = event => {
         event.preventDefault();
         const form = event.target;
-        
+        const ids = id
         const email = form.email.value
         const review = form.review.value
     
-        console.log(email, review)
+        console.log(ids,email, review)
     
         const editReview = {
           email: email,
           review: review
     
         }
+        // fetch(`http://localhost:5000/services/${_id}`,
+        //     {
+        //         method: 'PUT',
+        //         headers: {
+        //             'content-type' : 'application/json'
+        //         },
+        //         body: JSON.stringify(editReview)
+        //     })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data)
+        //     })
+
     }
 
 
@@ -30,7 +49,7 @@ const ReviewCard = ({ reviews }) => {
 
                         
                         {/* The button to open modal */}
-<label htmlFor="my-modal-3" className="btn">open modal</label>
+<label htmlFor="my-modal-3"  className="btn">open modal</label>
 
 {/* Put this part before </body> tag */}
 <input type="checkbox" id="my-modal-3" className="modal-toggle" />
