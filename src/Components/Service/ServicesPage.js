@@ -90,7 +90,7 @@ console.log(allServices)
             
 
             <div className="modal-action">
-    <input htmlFor="my-modal-6" className='btn' type="submit" value="Place order"></input>
+    <input htmlFor="my-modal-6" className='btn' type="submit" value="Add"></input>
       <label htmlFor="my-modal-6" className="btn">Done</label>
     </div>
             </form>
