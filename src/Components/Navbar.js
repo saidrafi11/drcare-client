@@ -64,11 +64,11 @@ console.log(title)
         <li><Link to='/'>Home</Link></li>
         
         <li><Link to='/blog'>Blog</Link></li>
-
+        <li><Link to='/services'>Services</Link></li>
         {
         user?.email ?
         <>
-        <li><Link to='/services'>Services</Link></li>
+        
         <li><Link to='/myreviews'>My Reviews</Link></li>
         <li className='font-semibold'>
               <button onClick={handleLogOut } className='btn-ghost'>Sign out</button>
@@ -91,10 +91,11 @@ console.log(title)
       <li><Link to='/'>Home</Link></li>
       
       <li><Link to='/blog'>Blog</Link></li>
+      <li><Link to='/services'>Services</Link></li>
       {
         user?.email ?
         <>
-        <li><Link to='/services'>Services</Link></li>
+        
         <li><Link to='/myreviews'>My Reviews</Link></li>
         <li className='font-semibold'>
               <button onClick={handleLogOut } className='btn-ghost'>Sign out</button>
@@ -119,7 +120,7 @@ console.log(title)
 {/* The button to open modal */}
 <label htmlFor="my-modal-6" className="btn btn-outline  btn-success btn-wide font-bold">+ Add service</label>
 
-{/* Put this part before </body> tag */}
+
 <input type="checkbox" id="my-modal-6" className="modal-toggle" />
 <div className="modal modal-bottom sm:modal-middle">
 <div className="modal-box relative">
