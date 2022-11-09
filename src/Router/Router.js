@@ -4,6 +4,7 @@ import Home from "../Components/Home";
 import Login from "../Components/Login/Login";
 import Signup from "../Components/Login/Signup/Signup";
 import Main from "../Components/Main";
+import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import ServiceDetails from "../Components/Service/ServiceDetails";
 import ServicesPage from "../Components/Service/ServicesPage";
 
@@ -18,7 +19,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path:'/services',
-                element:<ServicesPage></ServicesPage>
+                element:<PrivateRoute><ServicesPage></ServicesPage></PrivateRoute>
             },
             {
                 path:'/login',
