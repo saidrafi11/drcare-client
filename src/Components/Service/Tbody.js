@@ -22,12 +22,14 @@ const Tbody = ({service}) => {
               </div>
             </div>
             <div>
-              <div className="font-bold">{title}</div>
+              <div className="font-bold">{title}
+              
+              </div>
               
             </div>
           </div>
         </td>
-    
+        
         <td>${price}</td>
         <th>
           <Link to={`/services/${_id}`} className="btn btn-ghost btn-xs">details</Link>
