@@ -6,12 +6,12 @@ import ReviewCard from './ReviewCard';
 
 const ServiceDetails = () => {
   useTitle('Service Details')
-  const { title, img, description, price, _id, reviews} = useLoaderData();
-console.log(reviews)
+  const { title, img, description, price, _id, reviews } = useLoaderData();
+  console.log(reviews)
   const handleAddReview = event => {
     event.preventDefault();
     const form = event.target;
-    
+
     const email = form.email.value
     const review = form.review.value
 
@@ -23,17 +23,17 @@ console.log(reviews)
 
     }
     fetch(`http://localhost:5000/services/${_id}`,
-            {
-                method: 'PUT',
-                headers: {
-                    'content-type' : 'application/json'
-                },
-                body: JSON.stringify(addReview)
-            })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-            })
+      {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(addReview)
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+      })
 
   }
 
@@ -44,18 +44,23 @@ console.log(reviews)
     <div>
       <div className='p-5 w'>
         <div className="card w-full bg-base-100 shadow-xl">
-          {/* <figure><img src={img} alt="Shoes" /></figure> */}
-          
-          
-    <div>
-    <PhotoProvider pullClosable={true} maskClosable={false}>
-      <PhotoView src={img}>
-        <img src={img} alt="" />
-      </PhotoView>
-    </PhotoProvider>
-    </div>
 
-          {/* <figure><img src={img} alt="Shoes" /></figure> */}
+
+{/* <figure><img src={img} alt="Shoes" /></figure> */}
+
+
+          <div>
+            <PhotoProvider pullClosable={true} maskClosable={false}>
+              <PhotoView src={img}>
+                <img src={img} alt="" />
+              </PhotoView>
+            </PhotoProvider>
+          </div>
+
+{/* <figure><img src={img} alt="Shoes" /></figure> */}
+
+
+
           <div className="card-body">
             <h2 className="card-title text-3xl">{title}</h2>
             <h2 className="card-title">${price}</h2>
@@ -64,7 +69,9 @@ console.log(reviews)
               <button className="btn btn-primary">Buy Now</button>
             </div>
           </div>
-          {/* Review section */}
+
+
+{/* Review section */}
 
         </div>
       </div>
@@ -79,10 +86,10 @@ console.log(reviews)
 
               <div className='flex justify-end m-5'>
 
-                {/* The button to open modal */}
+{/* The button to open modal */}
                 <label htmlFor="my-modal-6" className="btn   btn glass btn-wide font-bold">+ Add review</label>
 
-                {/* Put this part before </body> tag */}
+{/* Put this part before </body> tag */}
                 <input type="checkbox" id="my-modal-6" className="modal-toggle" />
                 <div className="modal modal-bottom sm:modal-middle">
                   <div className="modal-box relative">
@@ -105,26 +112,21 @@ console.log(reviews)
                         <label htmlFor="my-modal-6" className="btn">Done</label>
                       </div>
                     </form>
-
-
-
-
                   </div>
                 </div>
-
-
-
               </div>
-
-
             </div>
           </div>
         </div>
       </div>
 
+      
+{/* Review cards  */}
+
+
       <div className='m-5'>
         {
-          reviews.map(r=><ReviewCard reviews={r}></ReviewCard>)
+          reviews.map(r => <ReviewCard reviews={r}></ReviewCard>)
         }
       </div>
     </div>

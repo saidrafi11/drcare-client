@@ -8,8 +8,13 @@ const Home = () => {
     useTitle('Home page')
     return (
         <div>
+
+            
+            {/* Home page components */}
+
+
             <div className='m-5'>
-            <Carousel></Carousel>
+                <Carousel></Carousel>
             </div>
             <div>
                 <Service></Service>
@@ -17,7 +22,7 @@ const Home = () => {
             <div>
                 <Section1></Section1>
             </div>
-            
+
         </div>
     );
 };

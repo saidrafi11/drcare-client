@@ -50,12 +50,14 @@ const AddService = () => {
 
     return (
         <div className="flex justify-center min-h-screen">
-            
+
+
+{/* Add services page */}
             {
                 user?.email ?
                     <>
                         <div >
-                        <input className="" />
+                            <input className="" />
                             <div className="m-5 w-3/4">
 
                                 <h2 className='text-4xl font-bold text-center p-5'>Add new services</h2>
@@ -83,27 +85,30 @@ const AddService = () => {
                             </div>
                         </div>
                     </>
+
+// Conditional rendering 
+
                     :
                     <>
                         <div className='flex align-middle '>
 
-                        <div className="card w-full bg-base-100 shadow-xl max-h-96">
-  <figure className="">
-    <img src="https://img.freepik.com/free-vector/security-safety-icon_24911-44991.jpg?w=740&t=st=1668047406~exp=1668048006~hmac=509fa615480ababd0cdafd828126286d263731e00621207b0b9d21cd8c3e950f" alt="Shoes" className="rounded-xl" />
-  </figure>
-  <div className="card items-center text-center pb-5 mt-0">
-    <h2 className="card-title font-bold mb-5">Please login first</h2>
-   
+                            <div className="card w-full bg-base-100 shadow-xl max-h-96">
+                                <figure className="">
+                                    <img src="https://img.freepik.com/free-vector/security-safety-icon_24911-44991.jpg?w=740&t=st=1668047406~exp=1668048006~hmac=509fa615480ababd0cdafd828126286d263731e00621207b0b9d21cd8c3e950f" alt="Shoes" className="rounded-xl" />
+                                </figure>
+                                <div className="card items-center text-center pb-5 mt-0">
+                                    <h2 className="card-title font-bold mb-5">Please login first</h2>
 
 
-   {/* Login button */}
+
+                                    {/* Login button */}
 
 
-    <div className="card-actions">
-      <button className="btn btn-outline btn-success"><Link to='/login'>Login</Link></button>
-    </div>
-  </div>
-</div>
+                                    <div className="card-actions">
+                                        <button className="btn btn-outline btn-success"><Link to='/login'>Login</Link></button>
+                                    </div>
+                                </div>
+                            </div>
 
 
 
