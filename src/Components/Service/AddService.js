@@ -92,6 +92,11 @@ const AddService = () => {
   <div className="card items-center text-center pb-5 mt-0">
     <h2 className="card-title font-bold mb-5">Please login first</h2>
    
+
+
+   {/* Login button */}
+
+   
     <div className="card-actions">
       <button className="btn btn-outline btn-success"><Link to='/login'>Login</Link></button>
     </div>

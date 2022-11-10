@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthProvider';
 
 const ServiceCard = ({service}) => {
+  const {loading} =useContext(AuthContext);
     const {_id, img, price, title, 
         description} = service;
     return (
