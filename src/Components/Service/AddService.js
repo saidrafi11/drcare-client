@@ -37,7 +37,7 @@ const AddService = () => {
             body: JSON.stringify(newService)
         }).then(res => res.json())
             .then(data => {
-                // navigate(from, {replace: true})
+                navigate(from, {replace: true})
         
                 
                 if (data.acknowledged) {
