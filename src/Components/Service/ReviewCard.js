@@ -4,7 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 const ReviewCard = ({ reviews }) => {
     const {_id} = useLoaderData()
     console.log(_id)
-    const {id, email, reviewMsg } = reviews;
+    const {id, email, reviewMsg, imgURL } = reviews;
     console.log(id, email, reviewMsg)
     
     
@@ -89,9 +89,11 @@ const ReviewCard = ({ reviews }) => {
 
                 </div>
                 <h2 className="card-title text-center">Review!!!</h2>
-                <h2 className="card-title">Review: {reviewMsg}</h2>
-
+                <img className='w-5 rounded-full' src={imgURL}></img>
                 <p>Email: {email}</p>
+                <h2 className="card-title">Review text: {reviewMsg}</h2>
+
+                
             </div>
         </div>
     );

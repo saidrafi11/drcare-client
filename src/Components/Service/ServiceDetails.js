@@ -1,28 +1,34 @@
 import React from 'react';
 import { useContext } from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import useTitle from '../../Hooks/useTitle';
 import { AuthContext } from '../Context/AuthProvider';
 import ReviewCard from './ReviewCard';
 
 const ServiceDetails = () => {
   const { user } = useContext(AuthContext)
+  const { title, img, description, price, _id, reviews } = useLoaderData();
+  const location = useLocation()
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || `/services/${_id}`;
   console.log(user)
   useTitle('Service Details')
-  const { title, img, description, price, _id, reviews } = useLoaderData();
-  console.log(reviews)
+  
+  // console.log(reviews)
   const handleAddReview = event => {
     event.preventDefault();
     const form = event.target;
 
     const email = form.email.value
+    const imgURL = form.imgURL.value
     const review = form.review.value
 
-    console.log(email, review)
+    console.log(email, review, imgURL)
 
     const addReview = {
       email: email,
+      imgURL: imgURL,
       review: review
 
     }
@@ -33,9 +39,11 @@ const ServiceDetails = () => {
           'content-type': 'application/json'
         },
         body: JSON.stringify(addReview)
+        
       })
       .then(res => res.json())
       .then(data => {
+        navigate(from, {replace: true})
         console.log(data)
       })
 
@@ -118,7 +126,8 @@ const ServiceDetails = () => {
 
                     <form onSubmit={handleAddReview}>
                       <div className='grid grid-cols-1 lg:grid-cols-4 gap-4 mb-3'>
-                        <input name='email' type="Email" placeholder="Email" className="input input-bordered w-full max-w-xs" />
+                        <input name='email' type="Email" placeholder="Email" className="input text-black input-bordered w-full max-w-xs" defaultValue={user?.email}/>
+                        <input name='imgURL' type="text" placeholder="imgURL" className="input text-black input-bordered w-full max-w-xs" defaultValue={user?.photoURL}/>
 
 
 
