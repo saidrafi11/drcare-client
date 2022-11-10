@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthProvider';
 import Tbody from './Tbody';
+import { HashLoader } from 'react-spinners';
 
 const ServicesPage = () => {
-
+  const {loading} =useContext(AuthContext);
     const [allServices, setService] = useState([])
 console.log(allServices)
     
@@ -46,12 +48,39 @@ console.log(allServices)
         <th>Details</th>
       </tr>
     </thead>
+
+    
     {
-                    allServices.map(service => <Tbody key={service._id} service={service}></Tbody>)
+     loading?
+     <>
+        
+        <div className=' min-h-screen flex justify-around items-center m-12'>
+            <HashLoader color="#36d7b7" />
+        </div>
+        
+     </> 
+     :
+     <>
+     {
+      allServices.map(service => <Tbody key={service._id} service={service}></Tbody>)
+     }
+     </>               
                 }
 
     
   </table>
+
+  <div className='flex justify-center m-5'>
+
+{/* The button to open modal */}
+<Link to='/addservices' htmlFor="my-modal-6" className="btn btn-outline  btn-success btn-wide font-bold">+ Add service</Link>
+
+
+
+
+
+
+</div>
 </div>
     );
 };

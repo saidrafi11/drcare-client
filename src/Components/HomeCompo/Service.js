@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthProvider';
 import ServiceCard from './ServiceCard';
+import { HashLoader } from 'react-spinners';
 
 const Service = () => {
     const [services, setService] = useState([])
+    const {loading} =useContext(AuthContext);
     useEffect(()=>{
         fetch('http://localhost:5000/services')
         .then(res => res.json())
@@ -22,13 +25,29 @@ const Service = () => {
                 <p className='mb-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium excepturi consectetur laborum. Cupiditate magnam, voluptas ab iusto accusantium quibusdam quos?</p>
             </div>
 
-
-            <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
             {
-                    services.slice(0, 3).map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
+     loading?
+     <>
+        <div className=''>
+        <div className=' min-h-screen flex justify-center items-center m-5'>
+            <HashLoader color="#36d7b7" />
+        </div>
+        </div>
+     </> 
+     :
+     <>
+     {
+      <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+      {
+              services.slice(0, 3).map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
+          }
+
+      </div>
+     }
+     </>               
                 }
 
-            </div>
+            
             <div className='flex justify-center mt-5'>
                 <Link to='/services' className=" btn  btn-wide glass text-blue-600 text-2xl font-bold">see all</Link>
                 

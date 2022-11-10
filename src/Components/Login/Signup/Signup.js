@@ -1,9 +1,17 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
+import { HashLoader } from 'react-spinners';
+
 
 const Signup = () => {
     const {createUser}=useContext(AuthContext)
+    const [loading, setLoading] = useState(true)
+    const location = useLocation()
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || '/';
+
 
     const handleSignup = event =>{
         event.preventDefault();
@@ -11,12 +19,15 @@ const Signup = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value
+        setLoading(true)
         console.log(name, email, password)
 
         createUser(email, password)
         .then(result =>{
             const user = result.user;
             console.log(user)
+            setLoading(false)
+            navigate(from, {replace: true})  
         })
         .catch(err => console.error(err))
     } 
@@ -48,7 +59,20 @@ const Signup = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <input className="btn btn-primary" type="submit" value="Signup"></input>
+                {
+                  loading?
+                  <>
+                  <div>
+        <div className=' min-h-screen flex justify-center m-5'>
+            <HashLoader color="#36d7b7" />
+        </div>
+        </div>
+                  </>
+                  :
+                  <>
+                  <input className="btn btn-primary" type="submit" value="Signup"></input>
+                  </>
+                }
                
               </div>
             </form>

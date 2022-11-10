@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider';
+import { HashLoader } from 'react-spinners';
 
 const Login = () => {
     const {login }= useContext(AuthContext)
@@ -9,13 +10,15 @@ const Login = () => {
 
     const from = location.state?.from?.pathname || '/';
 
-
+    const [loading, setLoading] = useState(true)
 
     const handleLogin = event =>{
+      
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value
+        setLoading(true)
         console.log(email, password)
 
         login (email, password)
@@ -23,7 +26,7 @@ const Login = () => {
             const currentUser = result.user;
          console.log(currentUser) 
 
-        
+         setLoading(false)
          navigate(from, {replace: true})  
         })
         .catch(err =>console.log(err))
@@ -51,11 +54,28 @@ const Login = () => {
                   <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                 </label>
               </div>
-              <div className="form-control mt-6">
+              {
+                  loading?
+                  <>
+
+<div className="form-control mt-6">
                 <input className="btn btn-primary" type="submit" value="login"></input>
                
               </div>
+                  
+                  </>
+                  :
+                  <>
+                  <div>
+        <div className=' min-h-screen flex justify-center m-5'>
+            <HashLoader color="#36d7b7" />
+        </div>
+        </div>
+                  </>
+}
             </form>
+
+
             <p className='text-center pb-5'>New user <Link to='/signup'>Signup</Link></p>
           </div>
         </div>
