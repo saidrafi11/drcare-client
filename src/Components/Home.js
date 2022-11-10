@@ -1,9 +1,11 @@
 import React from 'react';
+import useTitle from '../Hooks/useTitle';
 import Carousel from './Carousel';
 import Section1 from './HomeCompo/Section1';
 import Service from './HomeCompo/Service';
 
 const Home = () => {
+    useTitle('Home page')
     return (
         <div>
             <div className='m-5'>

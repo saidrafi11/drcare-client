@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
+import useTitle from '../../Hooks/useTitle';
 import { AuthContext } from '../Context/AuthProvider';
 
 const AddService = () => {
+    useTitle('Add services')
     const { user, loading } = useContext(AuthContext)
     const handleAddService = event => {
         event.preventDefault();
@@ -96,7 +98,7 @@ const AddService = () => {
 
    {/* Login button */}
 
-   
+
     <div className="card-actions">
       <button className="btn btn-outline btn-success"><Link to='/login'>Login</Link></button>
     </div>

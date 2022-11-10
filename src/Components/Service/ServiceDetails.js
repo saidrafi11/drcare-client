@@ -1,9 +1,11 @@
 import React from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 import ReviewCard from './ReviewCard';
 
 const ServiceDetails = () => {
+  useTitle('Service Details')
   const { title, img, description, price, _id, reviews} = useLoaderData();
 console.log(reviews)
   const handleAddReview = event => {

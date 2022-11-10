@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider';
 import Tbody from './Tbody';
 import { HashLoader } from 'react-spinners';
+import useTitle from '../../Hooks/useTitle';
 
 const ServicesPage = () => {
+  useTitle('Services')
   const {loading} =useContext(AuthContext);
     const [allServices, setService] = useState([])
 console.log(allServices)

@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import { HashLoader } from 'react-spinners';
+import useTitle from '../../../Hooks/useTitle';
 
 
 const Signup = () => {
@@ -9,7 +10,7 @@ const Signup = () => {
     const [loading, setLoading] = useState(true)
     const location = useLocation()
     const navigate = useNavigate();
-
+   useTitle('Signup')
     const from = location.state?.from?.pathname || '/';
 
 

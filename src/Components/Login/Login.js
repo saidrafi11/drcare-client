@@ -2,12 +2,13 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider';
 import { HashLoader } from 'react-spinners';
+import useTitle from '../../Hooks/useTitle';
 
 const Login = () => {
     const {login }= useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate();
-
+  useTitle('Login')
     const from = location.state?.from?.pathname || '/';
 
     const [loading, setLoading] = useState(true)

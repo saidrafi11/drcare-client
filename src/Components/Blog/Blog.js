@@ -1,10 +1,11 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 import BlogCards from './BlogCards';
 
 const Blog = () => {
     const blogs = useLoaderData()
-    
+    useTitle('Blogs')
     return (
         <div className='p-5'>
           
