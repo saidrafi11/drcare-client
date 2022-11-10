@@ -23,7 +23,7 @@ const ReviewCard = ({ reviews }) => {
           review: review
     
         }
-        // fetch(`http://localhost:5000/services/${_id}`,
+        // fetch(`https://y-chi-neon.vercel.app/services/${_id}`,
         //     {
         //         method: 'PUT',
         //         headers: {
@@ -49,7 +49,7 @@ const ReviewCard = ({ reviews }) => {
 
                         
                         {/* The button to open modal */}
-<label htmlFor="my-modal-3"  className="btn">open modal</label>
+<label htmlFor="my-modal-3"  className="btn">Edit</label>
 
 {/* Put this part before </body> tag */}
 <input type="checkbox" id="my-modal-3" className="modal-toggle" />

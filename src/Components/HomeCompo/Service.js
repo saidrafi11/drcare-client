@@ -10,13 +10,13 @@ const Service = () => {
     const [services, setService] = useState([])
     const {loading} =useContext(AuthContext);
     useEffect(()=>{
-        fetch('http://localhost:5000/services')
+        fetch('https://y-chi-neon.vercel.app/services')
         .then(res => res.json())
         .then(data => setService(data))
     }, [])
     
     return (
-        <div className=' p-5' style={{ 
+        <div className=' p-5 ' style={{ 
             backgroundImage: `url("https://img.freepik.com/free-vector/white-abstract-background-design_361591-1377.jpg?w=1380&t=st=1667908438~exp=1667909038~hmac=5d1ee17dcc9dbf746b4d435655dd484adcb2ea5ef5bbab0c093146f66404ee35")` 
           }}>
             <div className='text-center'>
@@ -37,7 +37,7 @@ const Service = () => {
      :
      <>
      {
-      <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+      <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center'>
       {
               services.slice(0, 3).map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
           }

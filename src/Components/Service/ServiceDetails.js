@@ -1,10 +1,13 @@
 import React from 'react';
+import { useContext } from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { useLoaderData } from 'react-router-dom';
 import useTitle from '../../Hooks/useTitle';
+import { AuthContext } from '../Context/AuthProvider';
 import ReviewCard from './ReviewCard';
 
 const ServiceDetails = () => {
+  const { user } = useContext(AuthContext)
   useTitle('Service Details')
   const { title, img, description, price, _id, reviews } = useLoaderData();
   console.log(reviews)
@@ -22,7 +25,7 @@ const ServiceDetails = () => {
       review: review
 
     }
-    fetch(`http://localhost:5000/services/${_id}`,
+    fetch(`https://y-chi-neon.vercel.app/services/${_id}`,
       {
         method: 'PUT',
         headers: {
@@ -46,7 +49,7 @@ const ServiceDetails = () => {
         <div className="card w-full bg-base-100 shadow-xl">
 
 
-{/* <figure><img src={img} alt="Shoes" /></figure> */}
+          {/* <figure><img src={img} alt="Shoes" /></figure> */}
 
 
           <div>
@@ -57,7 +60,7 @@ const ServiceDetails = () => {
             </PhotoProvider>
           </div>
 
-{/* <figure><img src={img} alt="Shoes" /></figure> */}
+          {/* <figure><img src={img} alt="Shoes" /></figure> */}
 
 
 
@@ -71,7 +74,7 @@ const ServiceDetails = () => {
           </div>
 
 
-{/* Review section */}
+          {/* Review section */}
 
         </div>
       </div>
@@ -86,10 +89,26 @@ const ServiceDetails = () => {
 
               <div className='flex justify-end m-5'>
 
-{/* The button to open modal */}
-                <label htmlFor="my-modal-6" className="btn   btn glass btn-wide font-bold">+ Add review</label>
+                {/* The button to open modal */}
 
-{/* Put this part before </body> tag */}
+                {
+                  user?.email ?
+                    <>
+                      <label htmlFor="my-modal-6" className="btn   btn glass btn-wide font-bold">+ Add review</label>
+
+                    </>
+                    :
+                    <>
+                      <div className="tooltip tooltip-open tooltip-error" data-tip="Please login first">
+                        {/* <button className="btn btn-error">error</button> */}
+                        <label className="btn   btn glass btn-wide font-bold">+ Add review</label>
+                      </div>
+                    </>
+
+                }
+
+
+                {/* Put this part before </body> tag */}
                 <input type="checkbox" id="my-modal-6" className="modal-toggle" />
                 <div className="modal modal-bottom sm:modal-middle">
                   <div className="modal-box relative">
@@ -120,8 +139,8 @@ const ServiceDetails = () => {
         </div>
       </div>
 
-      
-{/* Review cards  */}
+
+      {/* Review cards  */}
 
 
       <div className='m-5'>

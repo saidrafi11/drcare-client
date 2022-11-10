@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 import useTitle from '../../Hooks/useTitle';
 import { AuthContext } from '../Context/AuthProvider';
 
 const AddService = () => {
+    const navigate = useNavigate();
     useTitle('Add services')
     const { user, loading } = useContext(AuthContext)
     const handleAddService = event => {
@@ -26,7 +27,7 @@ const AddService = () => {
 
         }
         console.log(newService)
-        fetch('http://localhost:5000/services', {
+        fetch('https://y-chi-neon.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -34,6 +35,7 @@ const AddService = () => {
             body: JSON.stringify(newService)
         }).then(res => res.json())
             .then(data => {
+                navigate('https://y-chi-neon.vercel.app/service', { replace: true })
                 // console.log(data)
                 if (data.acknowledged) {
                     alert('Services added success')

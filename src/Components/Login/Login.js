@@ -3,9 +3,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider';
 import { HashLoader } from 'react-spinners';
 import useTitle from '../../Hooks/useTitle';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
-  const { login } = useContext(AuthContext)
+  const { login, providerLogin } = useContext(AuthContext)
   const location = useLocation()
   const navigate = useNavigate();
   useTitle('Login')
@@ -34,6 +35,18 @@ const Login = () => {
 
 
   }
+
+
+  const googleProvider = new GoogleAuthProvider();
+  
+  const handleGoogleSignIn = ()=>{
+    providerLogin(googleProvider)
+    .then(result =>{
+        const user = result.user
+        navigate(from, {replace: true})
+        console.log(user)
+    }).catch(error =>console.error(error))
+}
   return (
     <div className="hero min-h-screen ">
       <div className="hero-content flex-col ">
@@ -63,6 +76,9 @@ const Login = () => {
                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
               </label>
             </div>
+
+              
+
             {
               loading ?
                 <>
@@ -71,6 +87,12 @@ const Login = () => {
                     <input className="btn btn-primary" type="submit" value="login"></input>
 
                   </div>
+
+                  <div className='mt-5'>
+                      <button onClick={handleGoogleSignIn} className="btn btn-wide">Login with google</button>
+                    </div>
+
+                  
 
                 </>
                 :

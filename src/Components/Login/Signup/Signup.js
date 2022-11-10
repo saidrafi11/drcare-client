@@ -3,10 +3,11 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import { HashLoader } from 'react-spinners';
 import useTitle from '../../../Hooks/useTitle';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 
 const Signup = () => {
-  const { createUser } = useContext(AuthContext)
+  const { createUser, providerLogin } = useContext(AuthContext)
   const [loading, setLoading] = useState(true)
   const location = useLocation()
   const navigate = useNavigate();
@@ -32,6 +33,17 @@ const Signup = () => {
       })
       .catch(err => console.error(err))
   }
+
+  const googleProvider = new GoogleAuthProvider();
+  
+  const handleGoogleSignIn = ()=>{
+    providerLogin(googleProvider)
+    .then(result =>{
+        const user = result.user
+        navigate(from, {replace: true})
+        console.log(user)
+    }).catch(error =>console.error(error))
+}
   return (
 
     // Signup form
@@ -76,17 +88,23 @@ const Signup = () => {
               {
                 loading ?
                   <>
-                    <div>
-                      <div className=' min-h-screen flex justify-center m-5'>
-                        <HashLoader color="#36d7b7" />
-                      </div>
+                    <input className="btn btn-primary" type="submit" value="Signup"></input>
+
+                    <div className='mt-5'>
+                      <button onClick={handleGoogleSignIn} className="btn btn-wide">Signup with google</button>
                     </div>
                   </>
                   :
 
                   // Conditinas
                   <>
-                    <input className="btn btn-primary" type="submit" value="Signup"></input>
+
+
+                    <div>
+                      <div className=' min-h-screen flex justify-center m-5'>
+                        <HashLoader color="#36d7b7" />
+                      </div>
+                    </div>
                   </>
               }
 

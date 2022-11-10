@@ -11,6 +11,7 @@ const ServiceCard = ({service}) => {
   <figure><img src={img} alt="car!"/></figure>
   <div className="card-body">
     <h2 className="card-title">{title}</h2>
+    <h2 className="card-title">Price: ${price}</h2>
     <p>{description.slice(0, 100) + '...'}</p>
     <div className="card-actions justify-end">
     <Link to={`/services/${_id}`} className="btn btn-info text-white font-semibold">View details</Link>
