@@ -28,7 +28,7 @@ const AddService = () => {
             reviews: [{}]
 
         }
-        console.log(newService)
+        // console.log(newService)
         fetch('https://y-chi-neon.vercel.app/services', {
             method: 'POST',
             headers: {
@@ -37,17 +37,18 @@ const AddService = () => {
             body: JSON.stringify(newService)
         }).then(res => res.json())
             .then(data => {
-                navigate(from, {replace: true})
+                // navigate(from, {replace: true})
         
-                // navigate('https://y-chi-neon.vercel.app/service', { replace: true })
-                // console.log(data)
+                
                 if (data.acknowledged) {
                     console.log(data.acknowledged)
-                    alert('Services added success')
-                    swal("Good job!", "You clicked the button!", "success");
+                    
+                    
+
+                }else{
+                    swal("Good job!", "Services added success", "success");
                     console.log('Services added success')
                     form.reset();
-
                 }
             })
             .catch(er => console.error(er))
