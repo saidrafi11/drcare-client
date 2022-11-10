@@ -8,6 +8,7 @@ import ReviewCard from './ReviewCard';
 
 const ServiceDetails = () => {
   const { user } = useContext(AuthContext)
+  console.log(user)
   useTitle('Service Details')
   const { title, img, description, price, _id, reviews } = useLoaderData();
   console.log(reviews)

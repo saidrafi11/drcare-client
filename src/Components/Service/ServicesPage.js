@@ -27,30 +27,10 @@ const ServicesPage = () => {
 
 
   return (
-    <div className="overflow-x-auto w-full">
+    <div >
 
-
-
-      <table className="table w-full">
-
-        <thead>
-          <tr>
-            <th >
-              <label >
-                {/* <input type="checkbox" className="checkbox" /> */}
-              </label>
-            </th>
-            <th className='ml-48'>Service Name</th>
-            {/* <th>Job</th> */}
-            <th>Price</th>
-            <th>Details</th>
-          </tr>
-        </thead>
-
-{/* conditional rendering  */}
-
-
-        {
+<div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center'>
+{
           loading ?
             <>
 
@@ -67,8 +47,10 @@ const ServicesPage = () => {
             </>
         }
 
+  
+</div>
 
-      </table>
+     
 
       <div className='flex justify-center m-5'>
 

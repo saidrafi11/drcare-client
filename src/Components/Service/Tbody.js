@@ -6,43 +6,17 @@ const Tbody = ({service}) => {
         description} = service;
         console.log(service)
     return (
-        <tbody>
-     
-      <tr>
-        <th>
-          <label>
-            {/* <input type="checkbox" className="checkbox" /> */}
-          </label>
-        </th>
-        <td>
-          <div className="flex items-center space-x-3">
-            <div className="avatar">
-              <div className="mask rounded w-48 h-24">
-                <img src={img} alt="Avatar Tailwind CSS Component" />
-              </div>
-            </div>
-            <div>
-              <div className="font-bold">{title}
-              
-              </div>
-              
-            </div>
-          </div>
-        </td>
-        
-        <td>${price}</td>
-        <th>
-          <Link to={`/services/${_id}`} className="btn btn-ghost btn-xs">details</Link>
-        </th>
-      </tr>
-  
-      
-    
-      
-    
-      
-    
-    </tbody>
+      <div className="card w-96 glass">
+      <figure><img src={img} alt="car!"/></figure>
+      <div className="card-body">
+        <h2 className="card-title">{title}</h2>
+        <h2 className="card-title">Price: ${price}</h2>
+        <p>{description.slice(0, 100) + '...'}</p>
+        <div className="card-actions justify-end">
+        <Link to={`/services/${_id}`} className="btn btn-info text-white font-semibold">View details</Link>
+        </div>
+      </div>
+    </div>
     );
 };
 
