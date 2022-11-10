@@ -23,6 +23,10 @@ export const routes = createBrowserRouter([
                 element:<ServicesPage></ServicesPage>
             },
             {
+                path:'/addservices',
+                element:<ServicesPage></ServicesPage>
+            },
+            {
                 path:'/login',
                 element:<Login></Login>
             },
