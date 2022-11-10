@@ -5,6 +5,7 @@ import Section1 from './HomeCompo/Section1';
 import Section2 from './HomeCompo/Section2';
 import Service from './HomeCompo/Service';
 
+
 const Home = () => {
     useTitle('Home page')
     return (
@@ -27,6 +28,12 @@ const Home = () => {
                 <Section1></Section1>
             </div>
             
+                <div>
+
+
+
+                </div>
+
         </div>
     );
 };

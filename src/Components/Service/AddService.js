@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 import useTitle from '../../Hooks/useTitle';
 import { AuthContext } from '../Context/AuthProvider';
 
 const AddService = () => {
+    const location = useLocation()
     const navigate = useNavigate();
     useTitle('Add services')
+    const from = location.state?.from?.pathname || '/services';
     const { user, loading } = useContext(AuthContext)
     const handleAddService = event => {
         event.preventDefault();
@@ -35,13 +37,17 @@ const AddService = () => {
             body: JSON.stringify(newService)
         }).then(res => res.json())
             .then(data => {
-                navigate('https://y-chi-neon.vercel.app/service', { replace: true })
+                navigate(from, {replace: true})
+        
+                // navigate('https://y-chi-neon.vercel.app/service', { replace: true })
                 // console.log(data)
                 if (data.acknowledged) {
+                    console.log(data.acknowledged)
                     alert('Services added success')
                     swal("Good job!", "You clicked the button!", "success");
                     console.log('Services added success')
                     form.reset();
+
                 }
             })
             .catch(er => console.error(er))
