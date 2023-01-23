@@ -1,8 +1,10 @@
 import React from 'react';
 import useTitle from '../Hooks/useTitle';
 import Carousel from './Carousel';
+import Doctors from './HomeCompo/Doctors';
 import Section1 from './HomeCompo/Section1';
 import Section2 from './HomeCompo/Section2';
+import Section2Updated from './HomeCompo/Section2Updated';
 import Service from './HomeCompo/Service';
 
 
@@ -10,11 +12,11 @@ const Home = () => {
     useTitle('Home page')
     return (
         <div>
-<div>
-                <Section2></Section2>
+            <div >
+                <Section2Updated></Section2Updated>
             </div>
 
-            
+
             {/* Home page components */}
 
 
@@ -25,14 +27,14 @@ const Home = () => {
                 <Service></Service>
             </div>
             <div>
-                <Section1></Section1>
+                <Doctors></Doctors>
             </div>
-            
-                <div>
+
+            <div>
 
 
 
-                </div>
+            </div>
 
         </div>
     );

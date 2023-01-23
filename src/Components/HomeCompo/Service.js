@@ -19,7 +19,7 @@ const Service = () => {
         <div className=' p-5 ' style={{ 
             backgroundImage: `url("https://img.freepik.com/free-vector/white-abstract-background-design_361591-1377.jpg?w=1380&t=st=1667908438~exp=1667909038~hmac=5d1ee17dcc9dbf746b4d435655dd484adcb2ea5ef5bbab0c093146f66404ee35")` 
           }}>
-            <div className='text-center'>
+            <div className='text-center animate__animated animate__zoomIn'>
                 <p className='text-5xl font-semibold text-blue-400'>Featured Services</p>
                 
                 <p className='mb-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium excepturi consectetur laborum. Cupiditate magnam, voluptas ab iusto accusantium quibusdam quos?</p>
