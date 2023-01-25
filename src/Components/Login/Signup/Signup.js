@@ -49,7 +49,9 @@ const Signup = () => {
     // Signup form
 
 
-    <div className="min-h-screen w-full   bg-blue-400 flex justify-center ">
+    <div style={{backgroundColor: '#0093E9',
+    backgroundImage: 'linear-gradient(28deg, #0093E9 0%, #8dd4f5 100%)'
+    }} className="min-h-screen w-full    flex justify-center ">
       <div className="md:w-4/5 lg:w-4/5 max-w-xl place-self-center">
         
         <div className="p-10  w-full   bg-base-100 rounded-lg shadow-2xl">

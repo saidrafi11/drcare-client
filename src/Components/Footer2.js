@@ -5,7 +5,7 @@ const Footer2 = () => {
     return (
         <div className='w-full bg-black flex flex-col lg:flex-row lg:p-20 p-10'>
             <div className='text-white mx-auto lg:w-1/3 w-full p-2'>
-                <h1 className='text-blue-400 text-4xl font-extrabold'>Dr Care</h1>
+                <h1 className='text-blue-600 text-4xl font-extrabold'>Dr Care</h1>
                 <h1 className=' text-gray-300 text-md  font-medium mb-5'>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</h1>
                 <h1 className='text-white text-3xl font-bold'>Have  Questions?</h1>
                 <div className=' text-gray-300 text-md  font-medium mt-3 flex flex-row items-middle'><span className='mr-3'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -36,7 +36,7 @@ const Footer2 = () => {
                 <h1 className=' text-gray-300 text-md  font-medium '> <Link>Contact</Link></h1>
                 
                 
-                <Link>Contact</Link>
+                
             </div>
             <div className='text-white mx-auto lg:w-1/3 w-full p-2'>
             <h1 className='text-white text-3xl font-bold'>Opening hours</h1>

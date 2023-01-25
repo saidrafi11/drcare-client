@@ -48,7 +48,9 @@ const Login = () => {
     }).catch(error =>console.error(error))
 }
   return (
-    <div className=" min-h-screen w-full   bg-blue-400 flex justify-center ">
+    <div style={{backgroundColor: '#0093E9',
+      backgroundImage: 'linear-gradient(28deg, #0093E9 0%, #8dd4f5 100%)'
+      }} className=" min-h-screen w-full    flex justify-center ">
       <div className="md:w-4/5 lg:w-4/5  max-w-xl place-self-center ">
 
         {/* login header */}
