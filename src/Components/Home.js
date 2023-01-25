@@ -21,7 +21,7 @@ const Home = () => {
 
 
             <div className='m-5'>
-                <Carousel></Carousel>
+                {/* <Carousel></Carousel> */}
             </div>
             <div>
                 <Service></Service>

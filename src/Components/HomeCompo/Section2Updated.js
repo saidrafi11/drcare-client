@@ -21,7 +21,7 @@ const Section2Updated = () => {
         md:text-md
         lg:text-3xl
         
-        '>We bring hope and smile to the patient we serve</h1>
+        '>We bring hope and smile to the patient we serve.</h1>
         </div>
          <img className='w-1/2' src="https://img.freepik.com/free-photo/therapist-with-stethoscope-helps-man-crutches_1401-45.jpg?w=740&t=st=1674456043~exp=1674456643~hmac=426667aa1bb8f443bb6e4cd4ce7b59036be7bbb44891473f8a10a56669bed870" alt="" />
         </div>

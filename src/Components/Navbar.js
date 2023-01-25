@@ -49,10 +49,10 @@ const Navbar = () => {
   
       </ul>
     </div>
-    <Link to='/' className="btn btn-ghost normal-case text-xl text-blue-900 font-bold">Dr Care</Link>
+    <Link to='/' className="btn btn-ghost normal-case text-xl md:text-2xl lg:text-3xl text-blue-900 font-bold">Dr Care</Link>
   </div>
   <div className="navbar-end hidden lg:flex">
-    <ul className="menu menu-horizontal p-0 text-blue-900 font-semibold">
+    <ul className="menu menu-horizontal p-0 text-blue-900 font-bold">
       <li><Link to='/'>Home</Link></li>
       
       <li><Link to='/blog'>Blog</Link></li>
