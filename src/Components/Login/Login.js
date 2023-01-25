@@ -48,19 +48,20 @@ const Login = () => {
     }).catch(error =>console.error(error))
 }
   return (
-    <div className="hero min-h-screen ">
-      <div className="hero-content flex-col ">
+    <div className=" min-h-screen w-full   bg-blue-400 flex justify-center ">
+      <div className="md:w-4/5 lg:w-4/5  max-w-xl place-self-center ">
 
         {/* login header */}
 
-        <h1 className="text-5xl font-bold">Login now!</h1>
+        
 
 
         {/* Login form */}
 
 
-        <div className="card  w-full  shadow-2xl bg-base-100">
-          <form onSubmit={handleLogin} className="card-body">
+        <div className="p-10  w-full  shadow-2xl bg-base-100 rounded-lg">
+        <h1 className="text-3xl font-bold text-center text-blue-900">Please login</h1>
+          <form onSubmit={handleLogin} className="w-full">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -78,17 +79,17 @@ const Login = () => {
             </div>
 
               
-
+            <div className="form-control mt-6">
             {
               loading ?
                 <>
 
-                  <div className="form-control mt-6">
+                  
                     <input className="btn btn-primary" type="submit" value="login"></input>
 
-                  </div>
+                  
 
-                  <div className='mt-5'>
+                  <div className='mt-5 mx-auto'>
                       <button onClick={handleGoogleSignIn} className="btn btn-wide">Login with google</button>
                     </div>
 
@@ -107,11 +108,13 @@ const Login = () => {
                     </div>
                   </div>
                 </>
+                
             }
+            </div>
           </form>
 
 
-          <p className='text-center pb-5'>New user <Link to='/signup'>Signup</Link></p>
+          <p className='text-center pb-5'>New user <Link className='font-semibold text-blue-800' to='/signup'>Signup</Link></p>
         </div>
       </div>
     </div>

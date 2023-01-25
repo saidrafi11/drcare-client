@@ -49,10 +49,11 @@ const Signup = () => {
     // Signup form
 
 
-    <div className="hero min-h-screen ">
-      <div className="hero-content flex-col ">
-        <h1 className="text-5xl font-bold">Signup now!</h1>
-        <div className="card  w-full  ">
+    <div className="min-h-screen w-full   bg-blue-400 flex justify-center ">
+      <div className="md:w-4/5 lg:w-4/5 max-w-xl place-self-center">
+        
+        <div className="p-10  w-full   bg-base-100 rounded-lg shadow-2xl">
+        <h1 className="text-3xl font-bold text-center text-blue-900">Please Signup</h1>
 
 
           <form onSubmit={handleSignup} className="card-body">
@@ -90,8 +91,8 @@ const Signup = () => {
                   <>
                     <input className="btn btn-primary" type="submit" value="Signup"></input>
 
-                    <div className='mt-5'>
-                      <button onClick={handleGoogleSignIn} className="btn btn-wide">Signup with google</button>
+                    <div className='mt-5 mx-auto'>
+                      <button onClick={handleGoogleSignIn} className="btn btn-wide ">Signup with google</button>
                     </div>
                   </>
                   :
@@ -110,7 +111,7 @@ const Signup = () => {
 
             </div>
           </form>
-          <p className='text-center pb-5'>Already have an account <Link to='/login'>Login</Link></p>
+          <p className='text-center pb-5'>Already have an account <Link className='font-semibold text-blue-800' to='/login'>Login</Link></p>
         </div>
       </div>
     </div>
