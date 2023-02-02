@@ -26,26 +26,31 @@ const Footer2 = () => {
                 </svg>
 
                 </span> said.rafi@outlook.com</div>
-               
+
+
             </div>
             <div className='text-white mx-auto lg:w-1/3 w-full p-2'>
-            <h1 className='text-white text-3xl font-bold'>Links</h1>
+                <h1 className='text-white text-3xl font-bold'>Links</h1>
                 <h1 className=' text-gray-300 text-md  font-medium '><Link>Home</Link></h1>
                 <h1 className=' text-gray-300 text-md  font-medium '><Link>About</Link></h1>
                 <h1 className=' text-gray-300 text-md  font-medium '><Link>Services</Link></h1>
                 <h1 className=' text-gray-300 text-md  font-medium '> <Link>Contact</Link></h1>
-                
-                
-                
+
+
+
             </div>
             <div className='text-white mx-auto lg:w-1/3 w-full p-2'>
-            <h1 className='text-white text-3xl font-bold'>Opening hours</h1>
-            <div className=' text-gray-300 text-md  font-medium mt-2 flex flex-row items-middle'>	<span className='mr-3'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-  <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 000-1.5h-3.75V6z" clipRule="evenodd" />
-</svg>
+                <h1 className='text-white text-3xl font-bold'>Opening hours</h1>
+                <div className=' text-gray-300 text-md  font-medium mt-2 flex flex-row items-middle'>	<span className='mr-3'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                    <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 000-1.5h-3.75V6z" clipRule="evenodd" />
+                </svg>
 
 
                 </span> We are open 24/7</div>
+
+                <div>
+                <img className='ml-0' src="https://couragetoresist.org/wp-content/uploads/2018/09/stripe-logo.png" alt="" />
+                </div>
             </div>
         </div>
     );

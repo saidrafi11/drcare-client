@@ -35,27 +35,28 @@ const Signup = () => {
   }
 
   const googleProvider = new GoogleAuthProvider();
-  
-  const handleGoogleSignIn = ()=>{
+
+  const handleGoogleSignIn = () => {
     providerLogin(googleProvider)
-    .then(result =>{
+      .then(result => {
         const user = result.user
-        navigate(from, {replace: true})
+        navigate(from, { replace: true })
         console.log(user)
-    }).catch(error =>console.error(error))
-}
+      }).catch(error => console.error(error))
+  }
   return (
 
     // Signup form
 
 
-    <div style={{backgroundColor: '#0093E9',
-    backgroundImage: 'linear-gradient(28deg, #0093E9 0%, #8dd4f5 100%)'
-    }} className="min-h-screen w-full    flex justify-center ">
+    <div className="min-h-screen w-full    flex justify-center ">
       <div className="md:w-4/5 lg:w-4/5 max-w-xl place-self-center">
-        
-        <div className="p-10  w-full   bg-base-100 rounded-lg shadow-2xl">
-        <h1 className="text-3xl font-bold text-center text-blue-900">Please Signup</h1>
+
+        <div style={{
+          backgroundColor: '#0093E9',
+          backgroundImage: 'linear-gradient(28deg, #0093E9 0%, #8dd4f5 100%)'
+        }} className="p-10  w-full   bg-base-100 rounded-lg shadow-2xl">
+          <h1 className="text-3xl font-bold text-center text-blue-900">Please Signup</h1>
 
 
           <form onSubmit={handleSignup} className="card-body">

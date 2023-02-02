@@ -7,7 +7,7 @@ const ServiceCard = ({service}) => {
     const {_id, img, price, title, 
         description} = service;
     return (
-        <div className="card w-96 glass">
+        <div className="card w-96 glass mx-auto">
   <figure><img src={img} alt="car!"/></figure>
   <div className="card-body">
     <h2 className="card-title">{title}</h2>

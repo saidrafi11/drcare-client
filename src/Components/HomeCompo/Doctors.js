@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollAnimation from 'react-animate-on-scroll';
 import './Doctors.css';
 
 const Doctors = () => {
@@ -33,7 +34,9 @@ const Doctors = () => {
             </div>
 
             <div className='flex flex-col md:flex-col lg:flex-row mx-auto  p-10 items-center'>
-                <div className='bg-white w-full min-h-24  flex flex-col items-center text-center'>
+            {/* <ScrollAnimation duration={5} animateIn='bounceInRight'
+  animateOut='bounceOutLeft'> */}
+            <div className='bg-white w-full min-h-24  flex flex-col items-center text-center'>
                     <img className='object-top card-img lg:h-48' src="https://img.freepik.com/free-photo/portrait-smiling-handsome-male-doctor-man_171337-5055.jpg?w=900&t=st=1674484251~exp=1674484851~hmac=33125331d2f748b7dc99d2feb9aa1212fa63053a1a22cdc97041ac410d60da0c" alt="" />
                     <h1 className='text-blue-900 font-bold 
         sm:text-xl
@@ -62,6 +65,8 @@ const Doctors = () => {
         '>I am an ambitious workaholic, but apart from that, pretty simple person.</h1>
 
                 </div>
+{/* </ScrollAnimation> */}
+                
                 <div className='bg-white w-full min-h-24  flex flex-col items-center text-center'>
                     
                        

@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ScrollAnimation from 'react-animate-on-scroll';
 import useTitle from '../Hooks/useTitle';
-import Carousel from './Carousel';
+
 import Doctors from './HomeCompo/Doctors';
-import Section1 from './HomeCompo/Section1';
-import Section2 from './HomeCompo/Section2';
+
 import Section2Updated from './HomeCompo/Section2Updated';
 import Service from './HomeCompo/Service';
+import "animate.css/animate.min.css";
+
+
 
 
 const Home = () => {
     useTitle('Home page')
+    const [isVisible, setIsVisible] = useState(false);
     return (
         <div>
             <div >
@@ -31,9 +35,8 @@ const Home = () => {
             </div>
 
             <div>
-
-
-
+           
+           
             </div>
 
         </div>
